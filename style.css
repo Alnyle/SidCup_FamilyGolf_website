@@ -1,0 +1,218 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'montserrat';
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+#cursor {
+    height: 25px;
+    width: 25px;
+    background-color: #95C11E;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 99;
+}
+
+#cursor-blur {
+    height: 400px;
+    width: 400px;
+    background-color: #96c11e3b;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(40px);
+    z-index: 9;
+}
+
+#nav {
+    height: 145px;
+    width: 100% ;
+    padding: 0 150px;
+    /* background-color: red;  */
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 50px;
+    position: fixed;
+    z-index: 99;
+}
+
+#nav img {
+    height: 75px;
+}
+
+#nav h4 {
+    font-size: 1.645rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* ========= Hero Section ========= */
+
+/* Hero page1 */
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: fixed;
+    z-index: -1;
+}
+
+#main{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+}
+
+#page1{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 10;
+}
+
+#page1 h1 {
+    font-size: 7.5vw;
+    font-weight: 900;
+    position: relative;
+}
+
+#page1 h1::before {
+    content: "EAT. DRINK. PLAY.";
+    position: absolute;
+    color: black;
+    top: -4px;
+    left: -4px;
+
+    -webkit-text-stroke: 2px #95C11E;
+    z-index: -1;
+}
+
+#page1 h2 {
+    font-size: 1.6vw;
+    font-weight: 800;
+    margin-top:  10px;
+    margin-bottom: 10px;
+}
+
+/* vm =  pixels / viewport total width x 100.
+ For example,
+  with a viewport of 1200px, 240px will be converted to: 240 / 1200 x 100 = 20 vw. 
+  */
+
+#page1 p {
+    font-size: 1.2vw;
+    font-weight: 500;
+    width: 40%;
+}
+
+
+/* Hero page2 */
+
+
+#page2 {
+    min-height: 100vh;
+    width: 100%;
+    z-index: 10;
+}
+
+#scroller{
+    /* background-color: red; */
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: relative;
+    z-index: 10;
+}
+
+
+ #scroller::-webkit-scrollbar{
+    display: none;
+ }
+
+#scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 10s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+
+#scroller h4{
+    display: inline-block;
+    font-size: 7.5vw;
+    font-weight: 900;
+    font-family: gilroy;
+    margin-right: 10px;
+    transition: all linear 0.4s;
+    color: transparent;
+    -webkit-text-stroke: 2px #95C11E;
+}
+
+#scroller h4:hover{
+    color: #95C11E;
+    
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+/* About us section */
+
+#about-us{
+    height: 40vh;
+    padding: 0  50px;
+    /* background-color: red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#about-us img{
+    width: 220px;
+    height: 220px;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+#about-us  #about-us-in{
+    width: 40%;
+    text-align: center;
+}
+
+
+#about-us-in h3{
+    font-size: 2.5vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+#about-us-in p{
+    font-size: 2rem;
+    line-height: 26px;
+}
