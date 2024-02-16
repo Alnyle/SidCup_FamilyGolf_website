@@ -15,8 +15,25 @@ body {
   height: 100%;
 }
 
+*::selection {
+  background-color: #fff;
+  color: #95c11e;
+}
+
+body::-webkit-scrollbar{
+  display: none;
+  width: 5px;
+  background: linear-gradient(to right, #95c11e, #000);
+}
+
+body::-webkit-scrollbar-thumb{
+  background-color: #fff;
+  border-radius: 50px;
+}
+
+
 #cursor {
-  height: 25px;
+  height: 25px; 
   width: 25px;
   background-color: #95c11e;
   border-radius: 50%;
@@ -123,6 +140,33 @@ video {
   width: 40%;
 }
 
+
+#page1 #arrow {
+  height: 250px;
+  width: 250px;
+  background-color: red;
+  position: absolute;
+  left: -2%;
+  bottom: -2%;
+  background-color: transparent;
+  border: 2px solid #95c11e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all ease .5s;
+}
+
+#page1 #arrow:hover{
+  scale: 0.4;
+  background-color: #95c11e;
+}
+
+#page1 #arrow i {
+  font-size: 2vw;
+  font-weight: 100;
+}
+
 /*  Hero page2 */
 
 #page2 {
@@ -161,11 +205,14 @@ video {
   margin-right: 10px;
   transition: all linear 0.4s;
   color: transparent;
-  -webkit-text-stroke: 2px #95c11e;
+  color: #000;
+  -webkit-text-stroke: 2px #ffffff;
+
 }
 
 #scroller h4:hover {
   color: #95c11e;
+  -webkit-text-stroke: 2px #95c11e;
 }
 
 @keyframes scroll {
@@ -404,8 +451,61 @@ video {
     font-family: sans-serif;
 }
 
+/* Footer */
+
 #footer {
   height: 40vh;
   width: 100%;
   background: linear-gradient(to left bottom, #119f3a, #ace022);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  gap: 150px;
+  padding: 0 100px;
+}
+
+#footer > img {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  z-index: 0;
+}
+
+#footer img {
+  height: 100px;
+}
+
+#f1, #f2, #f3, #f4 {
+  width: fit-content;
+  position: relative;
+  z-index: 2;
+
+}
+
+#f2 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 900;
+  margin-bottom:  8px;
+}
+
+#f3 h3 {
+  font-size: 1.6vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+#f4 h4 {
+  font-size: 1vw;
+  white-space: nowrap;
+  text-transform: uppercase;
+  color: #000;
+  font-weight: 600;
+  line-height: 20px;
+  margin-bottom: 8px;
 }
