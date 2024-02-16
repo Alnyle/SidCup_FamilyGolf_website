@@ -133,9 +133,22 @@ gsap.from("#colon2", {
   scrollTrigger: {
     trigger: "#colon1",
     scroller: "body",
-    markers: true,
+    // markers: true,
     start: "top 50%",
     end: "top 45%",
     scrub: 4,
   },
 });
+
+
+gsap.from("#page4 h1", {
+  y: 50,
+  scrollTrigger: {
+    trigger: "#page4 h1",
+    scroller: "body",
+    // markers: true,
+    start: "top 75%",
+    end: "top 70%",
+    scrub: 3,
+  }
+})
