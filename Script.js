@@ -1,18 +1,29 @@
-
-let cursorElement = document.querySelector('#cursor')
-let blurCursorElement = document.querySelector('#cursor-blur')
+let cursorElement = document.querySelector("#cursor");
+let blurCursorElement = document.querySelector("#cursor-blur");
 // event list when mouse move
-document.addEventListener('mousemove', (event) => {
-    cursorElement.style.left = event.x + "px";
-    cursorElement.style.top = event.y + "px";
-    blurCursorElement.style.left = event.x - 200 +"px"; // to make cursor at the center or circle or blur he subtract 150 half blur height
-    blurCursorElement.style.top = event.y - 200 + "px";
-})
-
-
 document.addEventListener("mousemove", (event) => {
+  cursorElement.style.left = event.x + "px";
+  cursorElement.style.top = event.y + "px";
+  blurCursorElement.style.left = event.x - 200 + "px"; // to make cursor at the center or circle or blur he subtract 150 half blur height
+  blurCursorElement.style.top = event.y - 200 + "px";
+});
 
-})
+let nav = document.querySelectorAll("#nav h4");
+nav.forEach((element) => {
+  element.addEventListener("mouseenter", () => {
+    cursorElement.style.scale = 3;
+    cursorElement.style.border = "1px solid #fff";
+    cursorElement.style.backgroundColor = "transparent";
+  });
+
+  element.addEventListener("mouseleave", () => {
+    cursorElement.style.scale = 1;
+    cursorElement.style.border = "0px solid #95C11E";
+    cursorElement.style.backgroundColor = "#95C11E";
+  });
+});
+
+document.addEventListener("mousemove", (event) => {});
 
 // animate navbar
 gsap.to("#nav", {
@@ -70,5 +81,61 @@ gsap.to("#main", {
     start: "top -25%",
     end: "top -70%",
     scrub: 2,
+  },
+});
+
+gsap.from("#about-us img, #about-us-in", {
+  y: 90,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: "#about-us",
+    scroller: "body",
+    markers: true,
+    start: "top 60%",
+    end: "top 55%",
+    scrub: 3,
+  },
+});
+
+// cards animation
+gsap.from(".card", {
+  scale: 0.8,
+  opacity: 0,
+  duration: 1,
+  stagger: 0.1, // card will show one by one
+  scrollTrigger: {
+    trigger: ".card",
+    scroller: "body",
+    // markers: true,
+    start: "top 70%",
+    end: "top 65%",
+    scrub: 2,
+  },
+});
+
+gsap.from("#colon1", {
+  x: -70,
+  y: -70,
+  scrollTrigger: {
+    trigger: "#colon1",
+    scroller: "body",
+    markers: true,
+    start: "top 50%",
+    end: "top 45%",
+    scrub: 1,
+  },
+});
+
+gsap.from("#colon2", {
+  x: 70,
+  y: 70,
+  scrollTrigger: {
+    trigger: "#colon1",
+    scroller: "body",
+    markers: true,
+    start: "top 50%",
+    end: "top 45%",
+    scrub: 4,
   },
 });
